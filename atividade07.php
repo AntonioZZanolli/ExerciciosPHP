@@ -8,7 +8,6 @@
 </head>
 <body>
     <form action="#">
-        <p>Informe o peso: <input type="text" name="peso"></p>
         <p>Informe a altura: <input type="text" name="altura"></p>
         <input type="radio" id="M" name="sexo" value="M">
         <label for="Masculino">Masculino</label><br>
@@ -21,9 +20,10 @@
 
 <?php
 if (count($_GET) > 0 && isset($_GET['submit']) && $_GET != 0) {
-    $peso = $_GET['peso'];
     $altura = $_GET['altura'];
-    if (sexo == 'M') {
+    $sexo = $_GET['sexo'];
+
+    if ($sexo == 'M') {
         $pesoIdeal = (72.7 * $altura) - 58;
     }
     else {
